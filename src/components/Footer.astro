@@ -1,0 +1,144 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">TAL<span class="footer-accent">≡</span>SENS</div>
+      <p class="footer-tagline">Stories that make sens.</p>
+      <p class="footer-keywords">
+        Storytelling · Stratégie · Créativité · Conseil · Impact
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="/">Accueil</a>
+      <a href="/qui-sommes-nous">Qui sommes-nous</a>
+      <a href="/services">Services</a>
+      <a href="/references">Références</a>
+      <a href="/contact">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <a href="/services">Stratégie &amp; storytelling</a>
+      <a href="/services">Marketing digital</a>
+      <a href="/services">Brand content</a>
+      <a href="/services">Communication corporate &amp; RSE</a>
+      <a href="/services">Événementiel</a>
+      <a href="/services">Personal branding</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Suivez-nous</h4>
+      <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="/contact" class="footer-cta">Écrivons ensemble →</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© {year} TALESENS · Donner du sens aux marques.</span>
+      <span class="footer-credit">Conçu avec exigence et émotion.</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 6rem;
+    border-top: 1px solid var(--border-soft);
+    background: linear-gradient(180deg, transparent 0%, rgba(13, 15, 29, 0.6) 100%);
+    position: relative;
+  }
+  .site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--grad-brand);
+    opacity: 0.4;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.75rem;
+  }
+  .footer-accent {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .footer-tagline {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--grey-soft);
+    margin-bottom: 1rem;
+  }
+  .footer-keywords {
+    font-size: 0.85rem;
+    color: var(--grey-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-col h4 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-soft);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--grey-soft);
+    padding: 0.35rem 0;
+  }
+  .footer-col a:hover { color: var(--rose); }
+
+  .footer-cta {
+    margin-top: 0.5rem;
+    background: var(--grad-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600 !important;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border-soft);
+    padding: 1.5rem 0;
+  }
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: var(--grey-muted);
+  }
+
+  @media (max-width: 900px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>

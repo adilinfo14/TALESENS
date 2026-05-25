@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const entreprises = [
+  { name: 'INJAZ Al-Maghrib', sector: 'Éducation & entrepreneuriat' },
+  { name: 'Wafasalaf', sector: 'Services financiers' },
+  { name: 'Groupe Addoha', sector: 'Immobilier' },
+  { name: 'CMM', sector: 'Industrie' },
+  { name: 'Multinationale Énergies Renouvelables', sector: 'Énergie & ESG' },
+  { name: 'Art Mall Tanger', sector: 'Retail & culture' },
+  { name: 'The Student House Maroc', sector: 'Éducation' },
+  { name: 'Fondation Moubadara', sector: 'ONG & impact social' },
+  { name: 'Barceló', sector: 'Hôtellerie & hospitalité' },
+];
+
+const personalProfiles = [
+  { tag: 'Écrivains', desc: 'Positionnement, ligne éditoriale, présence digitale.' },
+  { tag: 'Conférenciers', desc: 'Storytelling de keynote, identité de scène, post-event.' },
+  { tag: 'Coachs seniors', desc: 'Personal branding, ancrage d\'expertise, communauté.' },
+  { tag: 'Experts sectoriels', desc: 'Thought leadership, LinkedIn, influence sectorielle.' },
+];
+---
+
+<Layout title="Références — TALESENS" description="Ils nous font confiance : INJAZ Al-Maghrib, Wafasalaf, Groupe Addoha, CMM, Barceló… et des personnalités du livre, de la scène et du conseil.">
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Références</span>
+      <h1 class="reveal">
+        Ils nous <span class="gradient-text">font confiance.</span>
+      </h1>
+      <p class="page-lead reveal">
+        Des expériences complémentaires, unies pour accompagner entreprises et personnalités
+        dans des moments décisifs de leur trajectoire.
+      </p>
+    </div>
+  </section>
+
+  <!-- ENTREPRISES -->
+  <section>
+    <div class="container">
+      <div class="block-header reveal">
+        <span class="eyebrow">Entreprises &amp; organisations</span>
+        <h2>Des marques qui inspirent, des actions qui marquent.</h2>
+      </div>
+
+      <div class="logos-grid">
+        {entreprises.map((c, i) => (
+          <div class="logo-card reveal" style={`--delay: ${i * 0.05}s`}>
+            <span class="logo-name">{c.name}</span>
+            <span class="logo-sector">{c.sector}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL BRANDING -->
+  <section class="personal-section">
+    <div class="container">
+      <div class="block-header reveal">
+        <span class="eyebrow">Personal branding</span>
+        <h2>Accompagner les voix qui comptent.</h2>
+        <p class="block-lead">
+          Nous accompagnons des profils publics — écrivains, conférenciers,
+          coachs seniors, experts sectoriels — pour renforcer leur
+          <strong>visibilité</strong>, leur <strong>crédibilité</strong> et leur <strong>influence</strong>.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        {personalProfiles.map((p) => (
+          <div class="profile-card reveal">
+            <div class="profile-tag">{p.tag}</div>
+            <p>{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT -->
+  <section class="engagement">
+    <div class="container">
+      <div class="engagement-box reveal">
+        <span class="eyebrow">Notre engagement</span>
+        <h2>
+          Chaque mission est une <span class="gradient-text">histoire partagée</span>,
+        </h2>
+        <p>
+          révélant l'identité et l'impact de ceux que nous accompagnons.
+        </p>
+        <p>
+          Nous ne livrons pas des campagnes : nous construisons des récits qui durent.
+        </p>
+        <a href="/contact" class="btn btn-primary mt-2">Devenir notre prochaine histoire <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    padding: clamp(4rem, 10vw, 7rem) 0 clamp(2rem, 5vw, 4rem);
+    text-align: center;
+  }
+  .page-lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    max-width: 720px;
+    margin: 1.5rem auto 0;
+  }
+
+  .block-header {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  .block-header h2 { margin-top: 0.5rem; }
+  .block-lead {
+    margin-top: 1.2rem;
+    font-size: 1.05rem;
+  }
+  .block-lead strong { color: var(--white-soft); font-weight: 600; }
+
+  /* Logos grid */
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  @media (max-width: 900px) { .logos-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .logos-grid { grid-template-columns: 1fr; } }
+
+  .logo-card {
+    padding: 1.8rem 1.5rem;
+    border-radius: var(--radius);
+    background: rgba(247, 247, 250, 0.025);
+    border: 1px solid var(--border-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform .3s ease, border-color .3s ease, background .3s ease;
+    transition-delay: var(--delay, 0s);
+  }
+  .logo-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(106, 92, 255, 0.35);
+    background: rgba(247, 247, 250, 0.05);
+  }
+  .logo-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--white-soft);
+    letter-spacing: 0.01em;
+  }
+  .logo-sector {
+    font-size: 0.78rem;
+    color: var(--grey-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* Personal section */
+  .personal-section { padding-top: 2rem; }
+  .profile-card {
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: rgba(247, 247, 250, 0.03);
+    border: 1px solid var(--border-soft);
+  }
+  .profile-tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: var(--grad-brand-soft);
+    border: 1px solid rgba(255, 77, 141, 0.3);
+    color: var(--rose);
+    margin-bottom: 1rem;
+  }
+  .profile-card p { font-size: 0.98rem; }
+
+  /* Engagement */
+  .engagement-box {
+    text-align: center;
+    padding: clamp(3rem, 7vw, 5rem) 2rem;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(106, 92, 255, 0.1), rgba(0, 180, 255, 0.1));
+    border: 1px solid var(--border-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .engagement-box::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 28px;
+    padding: 1px;
+    background: var(--grad-brand);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .engagement-box h2 { margin-bottom: 1rem; }
+  .engagement-box p {
+    font-size: 1.1rem;
+    max-width: 620px;
+    margin: 0 auto 0.8rem;
+  }
+</style>

@@ -1,0 +1,337 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — TALESENS" description="Écrivons ensemble votre prochaine histoire. Une idée, une ambition, une question ? Échangeons.">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Contact</span>
+      <h1 class="reveal">
+        Écrivons ensemble<br />
+        votre <span class="gradient-text">prochaine histoire.</span>
+      </h1>
+      <p class="page-lead reveal">
+        Vous avez une idée, une ambition, une question ?
+        Nous serons ravies d'échanger avec vous.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container contact-grid">
+
+      <!-- COORDONNÉES -->
+      <aside class="contact-info reveal">
+        <h2>Parlons de votre projet</h2>
+        <p class="info-lead">
+          Chaque collaboration commence par une rencontre. Et si on commençait la vôtre dès aujourd'hui ?
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon">✉</div>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:contact@talesens.com">[adresse@email.com]</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">☎</div>
+            <div>
+              <span class="contact-label">Téléphone</span>
+              <a href="tel:+212000000000">[numéro]</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">in</div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <a href="#" target="_blank" rel="noopener">[lien LinkedIn]</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">◉</div>
+            <div>
+              <span class="contact-label">Instagram</span>
+              <a href="#" target="_blank" rel="noopener">[@talesens]</a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="quote">
+          <p>
+            « Chaque collaboration commence par une rencontre. »
+          </p>
+        </div>
+      </aside>
+
+      <!-- FORMULAIRE -->
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <h2>Formulaire de contact</h2>
+
+        <div class="form-row">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" required placeholder="Votre nom" autocomplete="name" />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="vous@exemple.com" autocomplete="email" />
+        </div>
+
+        <div class="form-row">
+          <label for="company">Entreprise / Organisation <span class="opt">(facultatif)</span></label>
+          <input type="text" id="company" name="company" placeholder="Le nom de votre marque" />
+        </div>
+
+        <div class="form-row">
+          <label for="subject">Sujet</label>
+          <select id="subject" name="subject" required>
+            <option value="">Choisir un sujet…</option>
+            <option>Stratégie &amp; storytelling de marque</option>
+            <option>Marketing digital &amp; réseaux sociaux</option>
+            <option>Création de contenu &amp; brand content</option>
+            <option>Communication corporate &amp; RSE</option>
+            <option>Événementiel &amp; expériences de marque</option>
+            <option>Personal branding</option>
+            <option>Autre / je ne sais pas encore</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" required rows="5" placeholder="Parlez-nous de votre projet, de votre ambition, de votre histoire…"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            Envoyer mon message <span class="arrow">→</span>
+          </button>
+          <p class="form-hint">
+            Nous vous répondons sous 48&nbsp;h ouvrées.
+          </p>
+        </div>
+
+        <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+      </form>
+
+    </div>
+  </section>
+
+  <section class="lien-section">
+    <div class="container text-center">
+      <span class="eyebrow reveal">Restons en lien</span>
+      <p class="closing reveal">
+        Chaque collaboration commence par une rencontre.<br />
+        <span class="gradient-text">Et si on commençait la vôtre dès aujourd'hui ?</span>
+      </p>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    padding: clamp(4rem, 10vw, 7rem) 0 clamp(2rem, 5vw, 4rem);
+    text-align: center;
+  }
+  .page-lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    max-width: 660px;
+    margin: 1.5rem auto 0;
+  }
+
+  .contact-section { padding-top: 2rem; padding-bottom: clamp(4rem, 8vw, 6rem); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  /* INFO */
+  .contact-info h2 { margin-bottom: 1rem; }
+  .info-lead {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .contact-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    background: rgba(247, 247, 250, 0.025);
+    border: 1px solid var(--border-soft);
+    transition: border-color .3s ease, transform .3s ease;
+  }
+  .contact-list li:hover {
+    border-color: rgba(106, 92, 255, 0.35);
+    transform: translateX(3px);
+  }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--grad-brand-soft);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--white-soft);
+  }
+  .contact-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey-muted);
+    margin-bottom: 0.15rem;
+  }
+  .contact-list a {
+    color: var(--white-soft);
+    font-weight: 500;
+  }
+  .contact-list a:hover { color: var(--rose); }
+
+  .quote {
+    padding: 1.5rem;
+    border-left: 2px solid var(--rose);
+    background: rgba(255, 77, 141, 0.05);
+    border-radius: 0 12px 12px 0;
+  }
+  .quote p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--white-soft);
+  }
+
+  /* FORM */
+  .contact-form {
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    background: rgba(247, 247, 250, 0.03);
+    border: 1px solid var(--border-soft);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .contact-form h2 { margin-bottom: 1.8rem; font-size: clamp(1.5rem, 2.2vw, 1.9rem); }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .form-row label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white-soft);
+  }
+  .form-row .opt {
+    color: var(--grey-muted);
+    font-weight: 400;
+    font-size: 0.78rem;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    background: rgba(13, 15, 29, 0.5);
+    border: 1px solid var(--border-soft);
+    color: var(--white-soft);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: border-color .25s ease, background .25s ease;
+  }
+  .form-row input::placeholder,
+  .form-row textarea::placeholder {
+    color: var(--grey-muted);
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--violet);
+    background: rgba(13, 15, 29, 0.7);
+    box-shadow: 0 0 0 3px rgba(106, 92, 255, 0.15);
+  }
+  .form-row textarea { resize: vertical; min-height: 120px; }
+  .form-row select option { background: var(--midnight); color: var(--white-soft); }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .form-hint { font-size: 0.85rem; color: var(--grey-muted); }
+
+  .form-feedback {
+    margin-top: 1rem;
+    font-size: 0.92rem;
+  }
+  .form-feedback.success { color: #4ade80; }
+  .form-feedback.error { color: #f87171; }
+
+  /* LIEN */
+  .lien-section { padding-bottom: clamp(5rem, 10vw, 8rem); }
+  .closing {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    line-height: 1.4;
+    color: var(--white-soft);
+    margin-top: 1rem;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get('name') || '').toString().trim();
+      const email = (data.get('email') || '').toString().trim();
+      const subject = (data.get('subject') || '').toString().trim();
+      const message = (data.get('message') || '').toString().trim();
+
+      if (!name || !email || !subject || !message) {
+        feedback.textContent = 'Merci de remplir tous les champs requis.';
+        feedback.className = 'form-feedback error';
+        return;
+      }
+
+      // Fallback : ouvre le client mail tant qu'aucun backend n'est branché.
+      const body = encodeURIComponent(
+        `Nom : ${name}\nEmail : ${email}\nEntreprise : ${data.get('company') || ''}\nSujet : ${subject}\n\n${message}`
+      );
+      window.location.href = `mailto:contact@talesens.com?subject=${encodeURIComponent('Contact site — ' + subject)}&body=${body}`;
+      feedback.textContent = 'Votre client mail va s’ouvrir avec le message pré-rempli.';
+      feedback.className = 'form-feedback success';
+    });
+  });
+</script>

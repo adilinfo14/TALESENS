@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'strategie',
+    num: '01',
+    icon: '✦',
+    title: 'Stratégie & storytelling de marque',
+    enjeu: 'Exprimer votre singularité et vous différencier.',
+    solution: 'Plateforme narrative (ADN, vision, valeurs, messages-clés) et plan de communication global.',
+    impact: 'Clarté, authenticité et visibilité accrues auprès de vos publics.',
+  },
+  {
+    id: 'digital',
+    num: '02',
+    icon: '◐',
+    title: 'Marketing digital & réseaux sociaux',
+    enjeu: 'S\'adapter à des usages digitaux en constante évolution.',
+    solution: 'Stratégies performantes : social media, campagnes ciblées, contenu engageant, influence.',
+    impact: 'Visibilité renforcée, communautés engagées, résultats mesurables.',
+  },
+  {
+    id: 'contenu',
+    num: '03',
+    icon: '✧',
+    title: 'Création de contenu & brand content',
+    enjeu: 'Rendre votre marque visible et mémorable.',
+    solution: 'Création de contenus sur-mesure avec narration forte et identité visuelle cohérente.',
+    impact: 'Attention captée, confiance inspirée et relation durable avec vos audiences.',
+  },
+  {
+    id: 'corporate',
+    num: '04',
+    icon: '◆',
+    title: 'Communication corporate & impact RSE',
+    enjeu: 'Répondre aux attentes de transparence et d\'engagement.',
+    solution: 'Valorisation de vos initiatives : rapports, storytelling RSE/ESG, communication institutionnelle.',
+    impact: 'Crédibilité renforcée et impact positif reconnu.',
+  },
+  {
+    id: 'evenementiel',
+    num: '05',
+    icon: '✺',
+    title: 'Événementiel & expériences de marque',
+    enjeu: 'Créer une émotion qui laisse une trace.',
+    solution: 'Organisation d\'événements uniques amplifiés par des activations digitales.',
+    impact: 'Expérience mémorable et image de marque renforcée.',
+  },
+  {
+    id: 'personal',
+    num: '06',
+    icon: '✱',
+    title: 'Personal branding & leadership de pensée',
+    enjeu: 'Faire incarner la marque par ses dirigeants et experts.',
+    solution: 'Positionnement personnel, storytelling, LinkedIn et stratégie d\'influence.',
+    impact: 'Visibilité, crédibilité et influence accrues.',
+  },
+];
+---
+
+<Layout title="Services — TALESENS" description="Stratégies et expériences sur-mesure, construites autour du storytelling et du digital. Six expertises pour donner du sens à votre marque.">
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Services</span>
+      <h1 class="reveal">
+        Des stratégies <span class="gradient-text">sur-mesure</span>,<br />
+        construites autour de votre histoire.
+      </h1>
+      <p class="page-lead reveal">
+        Six expertises complémentaires, articulées autour du storytelling et du digital,
+        pour donner du sens à votre marque et de l'impact à vos messages.
+      </p>
+    </div>
+  </section>
+
+  <!-- LIST SERVICES -->
+  <section class="services-list">
+    <div class="container">
+      {services.map((s, i) => (
+        <article id={s.id} class:list={['service', { reversed: i % 2 === 1 }]}>
+          <div class="service-visual reveal">
+            <div class="service-num">{s.num}</div>
+            <div class="service-icon">{s.icon}</div>
+          </div>
+          <div class="service-content reveal">
+            <h2>{s.title}</h2>
+            <div class="service-rows">
+              <div class="service-row">
+                <span class="row-label">Enjeu</span>
+                <p>{s.enjeu}</p>
+              </div>
+              <div class="service-row">
+                <span class="row-label">Solution</span>
+                <p>{s.solution}</p>
+              </div>
+              <div class="service-row impact">
+                <span class="row-label">Impact</span>
+                <p>{s.impact}</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="page-cta">
+    <div class="container text-center">
+      <p class="closing reveal">
+        <em>Chaque service est une pièce de votre histoire.</em><br />
+        <span class="gradient-text">Ensemble, construisons la vôtre.</span>
+      </p>
+      <div class="flex-center mt-2 reveal">
+        <a href="/contact" class="btn btn-primary">Parlons de votre projet <span class="arrow">→</span></a>
+        <a href="/references" class="btn btn-ghost">Voir nos références</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    padding: clamp(4rem, 10vw, 7rem) 0 clamp(2rem, 5vw, 4rem);
+    text-align: center;
+  }
+  .page-lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    max-width: 720px;
+    margin: 1.5rem auto 0;
+  }
+
+  .services-list { padding-top: 0; }
+
+  .service {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 3.5rem;
+    align-items: center;
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    border-top: 1px solid var(--border-soft);
+  }
+  .service:first-child { border-top: 0; }
+  .service.reversed { grid-template-columns: 1.6fr 1fr; }
+  .service.reversed .service-visual { order: 2; }
+  .service.reversed .service-content { order: 1; }
+
+  @media (max-width: 900px) {
+    .service, .service.reversed {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .service.reversed .service-visual { order: 0; }
+  }
+
+  .service-visual {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(106, 92, 255, 0.15), rgba(255, 77, 141, 0.15), rgba(0, 180, 255, 0.15));
+    border: 1px solid var(--border-soft);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .service-visual::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 28px;
+    padding: 1px;
+    background: var(--grad-brand);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .service-num {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.4rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--grey-muted);
+    letter-spacing: 0.05em;
+  }
+  .service-icon {
+    font-size: clamp(4rem, 8vw, 7rem);
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    line-height: 1;
+  }
+
+  .service-content h2 {
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-rows { display: flex; flex-direction: column; gap: 1.2rem; }
+  .service-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .service-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .row-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    padding-top: 0.25rem;
+  }
+  .service-row.impact .row-label {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .service-row p { color: var(--white-soft); font-size: 1rem; line-height: 1.6; }
+  .service-row.impact p { font-weight: 500; }
+
+  @media (max-width: 560px) {
+    .service-row { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+
+  /* CTA */
+  .page-cta { padding-top: 4rem; padding-bottom: clamp(5rem, 10vw, 8rem); }
+  .closing {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    line-height: 1.4;
+    color: var(--white-soft);
+    margin-bottom: 1rem;
+  }
+  .closing em { font-style: italic; color: var(--grey-soft); font-weight: 500; }
+</style>

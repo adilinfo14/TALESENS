@@ -1,0 +1,279 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const expertises = [
+  { icon: '✦', title: 'Stratégie & storytelling de marque', desc: 'Plateforme narrative, vision, messages-clés, plan de communication global.', href: '/services#strategie' },
+  { icon: '◐', title: 'Marketing digital & réseaux sociaux', desc: 'Social media, campagnes ciblées, contenu engageant, influence.', href: '/services#digital' },
+  { icon: '✧', title: 'Création de contenu & brand content', desc: 'Contenus sur-mesure avec narration forte et identité visuelle cohérente.', href: '/services#contenu' },
+  { icon: '◆', title: 'Communication corporate & RSE', desc: 'Rapports, storytelling RSE/ESG, communication institutionnelle.', href: '/services#corporate' },
+  { icon: '✺', title: 'Événementiel & expériences de marque', desc: 'Événements uniques amplifiés par des activations digitales.', href: '/services#evenementiel' },
+  { icon: '✱', title: 'Personal branding & thought leadership', desc: 'Positionnement personnel, LinkedIn et stratégie d\'influence.', href: '/services#personal' },
+];
+---
+
+<Layout title="TALESENS — Donner du sens aux marques">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
+
+    <div class="container hero-inner">
+      <span class="eyebrow reveal">Stories that make sens</span>
+      <h1 class="reveal">
+        Donner du <span class="gradient-text">sens</span><br />
+        aux marques.
+      </h1>
+      <p class="hero-lead reveal">
+        Communication + digital + storytelling au service de votre impact.
+        Nous transformons votre singularité en récit qui inspire, connecte et marque.
+      </p>
+      <div class="hero-ctas reveal">
+        <a href="/contact" class="btn btn-primary">Parlons de votre projet <span class="arrow">→</span></a>
+        <a href="/services" class="btn btn-ghost">Découvrir nos expertises</a>
+      </div>
+
+      <div class="hero-keywords reveal" aria-hidden="true">
+        <span>Storytelling</span><i>•</i>
+        <span>Stratégie</span><i>•</i>
+        <span>Créativité</span><i>•</i>
+        <span>Conseil</span><i>•</i>
+        <span>Impact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVICTION -->
+  <section class="conviction">
+    <div class="container">
+      <div class="conviction-grid">
+        <div class="reveal">
+          <span class="eyebrow">Notre conviction</span>
+          <h2>Une marque n'est pas seulement un logo ou une campagne.</h2>
+        </div>
+        <div class="conviction-text reveal">
+          <p class="lead">
+            C'est une <strong>histoire</strong>. Une <strong>émotion</strong>. Une <strong>relation</strong>.
+          </p>
+          <p>
+            Chez TALESENS, nous croyons que chaque marque, chaque organisation, chaque personnalité porte
+            en elle un récit unique — capable de créer du lien, d'inspirer et de générer un impact durable.
+          </p>
+          <p>
+            Notre rôle : révéler ce récit, l'écrire avec rigueur, et le déployer avec créativité.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROCHE -->
+  <section class="approche">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Notre approche</span>
+        <h2>Trois équilibres, une signature.</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="approche-card reveal">
+          <div class="approche-num">01</div>
+          <h3>Stratégique <span class="amp">&</span> créative</h3>
+          <p>La rigueur du conseil rencontre la liberté de l'imagination.</p>
+        </div>
+        <div class="approche-card reveal">
+          <div class="approche-num">02</div>
+          <h3>Digitale <span class="amp">&</span> humaine</h3>
+          <p>L'innovation digitale au service d'une authenticité qui ne triche jamais.</p>
+        </div>
+        <div class="approche-card reveal">
+          <div class="approche-num">03</div>
+          <h3>Narrative <span class="amp">&</span> impactante</h3>
+          <p>Des récits qui inspirent, engagent et laissent une empreinte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISES -->
+  <section class="expertises">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Nos expertises</span>
+        <h2>Six leviers pour <span class="gradient-text">faire résonner</span> votre marque.</h2>
+      </div>
+
+      <div class="grid-3">
+        {expertises.map((e) => (
+          <a href={e.href} class="card reveal">
+            <div class="card-icon">{e.icon}</div>
+            <h3>{e.title}</h3>
+            <p>{e.desc}</p>
+            <span class="card-link">En savoir plus →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <span class="eyebrow">Votre histoire commence ici</span>
+        <h2>Vous avez une histoire à raconter,<br />une communauté à engager ?</h2>
+        <p>Nous serons ravies de l'écrire avec vous.</p>
+        <a href="/contact" class="btn btn-primary">Démarrer la conversation <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: clamp(5rem, 12vw, 9rem) 0 clamp(4rem, 10vw, 7rem);
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.55;
+    animation: float 14s ease-in-out infinite;
+  }
+  .orb-1 { width: 420px; height: 420px; background: var(--violet); top: -120px; left: -100px; }
+  .orb-2 { width: 360px; height: 360px; background: var(--rose); top: 30%; right: -80px; animation-delay: -4s; }
+  .orb-3 { width: 320px; height: 320px; background: var(--bleu); bottom: -100px; left: 30%; animation-delay: -8s; }
+
+  .hero-inner { position: relative; z-index: 1; text-align: center; }
+  .hero h1 { margin-bottom: 1.5rem; }
+  .hero-lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+  .hero-keywords {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--grey-muted);
+  }
+  .hero-keywords i {
+    font-style: normal;
+    color: var(--rose);
+    opacity: 0.7;
+  }
+
+  /* CONVICTION */
+  .conviction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .conviction-grid h2 { line-height: 1.15; }
+  .conviction-text p { margin-bottom: 1rem; font-size: 1.05rem; }
+  .conviction-text .lead {
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    color: var(--white-soft);
+    font-family: var(--font-display);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  .conviction-text strong { color: var(--white-soft); font-weight: 600; }
+  @media (max-width: 900px) {
+    .conviction-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  /* APPROCHE */
+  .approche-card {
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: rgba(247, 247, 250, 0.025);
+    border: 1px solid var(--border-soft);
+    transition: transform .3s ease, border-color .3s ease;
+  }
+  .approche-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(106, 92, 255, 0.4);
+  }
+  .approche-num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 2.5rem;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  .approche-card h3 { margin-bottom: 0.6rem; }
+  .approche-card .amp { color: var(--rose); font-weight: 400; }
+
+  /* EXPERTISES */
+  .card-link {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--rose);
+    letter-spacing: 0.02em;
+  }
+
+  /* CTA FINAL */
+  .final-cta { padding-bottom: clamp(5rem, 10vw, 8rem); }
+  .cta-box {
+    text-align: center;
+    padding: clamp(3rem, 7vw, 5rem) 2rem;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(106, 92, 255, 0.12), rgba(255, 77, 141, 0.12), rgba(0, 180, 255, 0.12));
+    border: 1px solid rgba(247, 247, 250, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 28px;
+    padding: 1px;
+    background: var(--grad-brand);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .cta-box h2 { margin-bottom: 1rem; }
+  .cta-box p { font-size: 1.1rem; margin-bottom: 2rem; }
+</style>
