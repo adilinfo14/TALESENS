@@ -15,6 +15,6 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "astro": "^6.3.7"
+    "astro": "^7.3.5"
   }
 }
